@@ -44,9 +44,7 @@
     createCollectable(type.steve, 560, 300, 6, 0.7);
     createCollectable(type.kennedi, 800, 170, 6, 0.7);
     createCollectable(type.db, 85 ,450, 6, 0.7);
-    //createCollectable(type.steve, 85, 50, 6, 0.7);
-    createCollectable(type.minecraft, 85, 50, 6, 0.7);
-
+    createCollectable(type.steve, 85, 50, 6, 0.7);
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
   }
