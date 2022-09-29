@@ -15,14 +15,47 @@
                 margin-right: auto;
                 }
                 body {
-                background-color: rgb(201, 167, 95);
+                background-color: rgb(207, 192, 192);
                 }
-                div {
-                 word-wrap: normal;
+                #mainContient {
+                    background-color: rgb(255, 255, 255);
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color:rgb(73, 28, 61)
                 }
-                p.solid {border-style: solid;}
+                a:link {
+                color: rgb(255, 255, 255);
+                }
 
+                a:visited {
+                color: rgb(101, 65, 112);
+                }
 
+                a:hover {
+                color: rgb(185, 105, 255);
+                }
+
+                a:active {
+                color: rgb(43, 6, 54);
+                }
+                .column {
+                float: center;
+                width: 33.33%;
+                }
+                .picOne {
+                display: contents;
+                margin: auto;
+                }
+                .picTwo {
+                margin: auto;
+                }
+                table, th, td {
+                border: 1px solid rgb(255, 255, 255);
+                }
+                .center {
+                margin-left: auto;
+                 margin-right: auto;
+                }
             </style>
 
         </head>
@@ -30,13 +63,13 @@
         <body>
             <nav>
 
-                <div class="topnav-centered">
+                <div class="topnav-centered" id="datDog">
                     <a href="www.datdog.com">
                        Website
                     </a>
                 </div>
 
-                <div class="topnav-centered">
+                <div class="topnav-centered" id="datMenu">
                     <a href=" www.datdog.com">
                       Menu
                     </a>
@@ -53,10 +86,16 @@
             </h1>
 
             <hr>
-
-            <table>
+            <h1>
+                Come see us at DatDog.com
+            </h1>
+            <table class="center">
+                <col>
                 <th>
-
+                    <div id="mainContient">
+                    <h2> 
+                        The Dat Dog Story 
+                    </h2>
                     <p>
                         Does the idea of a hot dog put a smile on your face? Does it remind you of happy times at a
                         picnic, a ballpark, or on vacation? could an Irish Guinness sausage with andouille sauce,
@@ -73,20 +112,36 @@
                         buffalo sauce) are a thing of beauty. The over 30 toppings available at no extra charge allow
                         you to create your very own “jazz improvisation in a bun”.
                     </p>
-                     
-                    <div class="row">
-
-                        <div class="column" style="">
-
-                            <img src="Images/Location1.webp" width="350">
-
-                        <div class="column" style="">
-
-                            <p> 
-                                 3336 Magazine St, New Orleans, LA 70115
-                            </p>
                     </div>
+                </col>
+                <col>
+                <table id="tableOne">
+                        <tr>
+                            <th>
+                                Come see us 
+                            </th>
+                        </tr>
+                         <tr>
+                            <td>
+                                <img src="Images/dat-dog-2.jpg" width="350" class="center">
+                            </td>
+                            <td>
+                                <img src="Images/Location1.webp" width="350" class="center"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5030 Freret St, New Orleans, LA 70115 
+                            </td>
+                            <td>
+                                3336 Magazine St, New Orleans, LA 70115
+                            </td>
 
+
+                        </tr>   
+                    
+                </table>
+                </col>
                 </th>
             </table>
 
