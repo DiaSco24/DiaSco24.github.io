@@ -5,7 +5,7 @@
 
                 .center {
                 display: block;
-                 margin-left: auto;
+                margin-left: auto;
                 margin-right: auto;
                 }
 
@@ -17,14 +17,18 @@
                     background-color: rgb(255, 255, 255);
                     border-style: solid;
                     border-width: 2px;
-                    border-color:rgb(73, 28, 61)
+                    border-color:rgb(73, 28, 61);
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 10px;
                 }
 
                 #mainContient {
                     text-align: center;
                 }
                 a:link {
-                color: rgb(255, 255, 255);
+                color: black;
                 }
 
                 a:visited {
@@ -35,6 +39,26 @@
                 color: rgb(185, 105, 255);
                 }
 
+                nav {
+                    background: rgb(255, 255, 255);
+                   margin: 20px;
+                    display: flex;
+                    padding: 10px;
+                }
+                
+                #nav-ul {
+                    list-style-image: none;
+                }
+                .nav-li {
+                    display: inline-block;
+                    padding: 0 10px;
+                }
+                a {
+                    text-decoration: none;
+                    color: rgb(0, 0, 0);
+                }
+              
+
                 a:active {
                 color: rgb(43, 6, 54);
                 }
@@ -42,6 +66,7 @@
                 .column {
                 float: center;
                 width: 33.33%;
+                padding: 10px;
                 }
 
                 .picOne {
@@ -55,13 +80,11 @@
 
                 table, th, td {
                 border: 1px solid rgb(255, 255, 255);
-                width: 50%;
-                }
-
-                .center {
+                width: 70%;
                 margin-left: auto;
-                 margin-right: auto;
-                }
+                margin-right: auto;
+                padding: 10px;
+              }
 
                 td {
                     text-align: center;
@@ -69,10 +92,6 @@
 
                 .paragraph{
                     text-align: center;
-                }
-
-                .topNav {
-                    background-color: #333;
                 }
 
                 .topnav {
