@@ -57,6 +57,7 @@
 				box.text(newText);
 			}
 
+
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
@@ -78,6 +79,8 @@
 			var boardHeight = 100; 
 
 			var boardWidthY = 650;
+
+			var randNum = Math.random() * 100;
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -103,16 +106,14 @@
 
 			positionY = positionY + speed;
 
-			moveBoxTo(positionY);
-
-			if (positionY > boardheight){
-			speed = speed * -1;
+			if (positionY > boardHeight){
+				speed = speed * +1;
 			};
 
 			if (positionY <= 0){
-			speed = speed * -1;
+				speed = speed * +1;
 			};
-
+			
 			};
 
 		
@@ -128,7 +129,7 @@
 
 			points = points + 1;
 
-			speed = speed + 3;
+			speed = speed + 2;
 
 			positionX = 0;
 
@@ -136,7 +137,10 @@
 
 			changeBoxText(points);
 
+			
+
 			};
+
 		})();
 	</script>
 </body>
