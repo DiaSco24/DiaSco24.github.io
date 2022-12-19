@@ -11,17 +11,58 @@ var level01 = function (window) {
 
         // this data will allow us to define all of the
         // behavior of our game
+
         var levelData = {
-            "name": "Robot Romp",
-            "number": 1, 
-            "speed": -3,
-            "gameItems": [
-                { "type": "sawblade", "x": 400, "y": groundY },
-                { "type": "sawblade", "x": 600, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },
-            ]
-        };
+            name: "Robot Romp",
+            number: 1,
+            speed: -3,
+            gameItems: [
+              { type: "sawBlade", x: 550, y: 350 },
+              { type: "sawBlade", x: 340, y: 500 },
+              { type: "sawBlade", x: 600, y: 700 },
+              { type: "brokenHeart", x: 400, y: 350},
+              { type: "brokenHeart", x: 500, y: 400},
+              { type: "enemy", x: 800, y: groundY - 500},
+              { type: "enemy", x: 1500, y: groundY - 450},
+              { type: "enemy", x: 2000, y: groundY - 400},
+              { type: "reward", x: 700, y: groundY - 450},
+              { type: "reward", x: 2000, y: groundY - 400},
+            ],
+          };
+
+          
+
         window.levelData = levelData;
+
+        for (var i = 0; i < levelData.gameItems.length; i++) {
+            var eachItem = levelData.gameItems[i];
+                if(eachItem.type === "sawBlade") {
+                    createSawBlade (550, 350);
+                    createSawBlade (340, 500);
+                    createSawBlade (600, 700);
+                    createSawBlade (800, 450);
+                }
+                if(eachItem.type === "brokenHeart") {
+                    brokenHeart (400, 350);
+                    brokenHeart (500, 400);
+                }
+                if(eachItem.type === "enemy") { 
+                    createEnemy(800, groundY - 500);
+                    createEnemy(1500, groundY - 450);
+                    createEnemy(2000, groundY - 400);
+                }
+                if(eachItem.type === "reward"){
+                    createReward(700, groundY - 450);
+                    createReward(2000, groundY - 400);
+                }
+        };
+
+   
+        
+
+        // eachElement(1);
+            // code to do something with each element
+          
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(true);
 
@@ -105,8 +146,38 @@ var level01 = function (window) {
             createEnemy(1500, groundY - 450);
             createEnemy(2000, groundY - 400);
 
+
+        function createReward (x, y) {
+
+            var reward = game.createGameItem("enemy", 25);
+            var kitty = draw.bitmap("img/chococat.png");
+            kitty.x = -25;
+            kitty.y = -25;
+            reward.addChild(kitty);
+        
+            reward.x = x;
+            reward.y = groundY - y;
+        
+            game.addGameItem(reward);
+        
+            reward.velocityX = -1;
+            reward.rotationalVelocity = 2;
+        
+            reward.onPlayerCollision = function () {
+        
+                game.changeIntegrity(+50)
+                game.increaseScore(500);
+                reward.fadeOut();
+            };
+
+        }
+
+        createReward(700, groundY - 450);
+        createReward(2000, groundY - 400);
         
         
+
+            
         
         // DO NOT EDIT CODE BELOW HERE
     }
