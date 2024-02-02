@@ -76,7 +76,7 @@ $(document).ready(function () {
 
   function handleGood(color,shape,repeat){
 
-    setBackgroundWithSimple(color,shape,repeat)
+    setBackgroundWithSimple(color,shape,repeat);
 
     animationDetails.displayType = 2
 
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
     var repeat = currentShape.repeat
     
-    handleBad(currentShape,repeat)
+    handleBad(currentShape,repeat);
     
   }
 
