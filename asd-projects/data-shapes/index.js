@@ -41,23 +41,32 @@ $(document).ready(function () {
   // TODO 1: create a new shape object and add it to the array
 
   var shape = {
+
     color: "blue", 
     shape: "circle",
     repeat: 3,
+
   }
+
   dataShapes.push(shape);
   
   // TODO 2: add a new property to all data shapes
 
   for (var i = 0; i < dataShapes.length; i++) {
-    var currentShape = dataShapes[1]
+    var currentShape = dataShapes[i]
 
     if(currentShape.color === "red"){
+
       currentShape.goodBehavior = "bounce"
+
     } else if (currentShape.color === "blue"){
+
       currentShape.goodBehavior = "blink"
+
     } else {
+
       currentShape.goodBehavior = "spin"
+
     }
     
   }
@@ -86,11 +95,13 @@ $(document).ready(function () {
   // TODO 5-a: add a function that handles the bad display type
 
   function handleBad(data, repeat) {
+
     repeat += 1;
 
     setBackgroundWithMixed(data, repeat);
 
     animationDetails.displayType = 3
+
   }
   
 
@@ -120,7 +131,7 @@ $(document).ready(function () {
 
     var repeat = currentShape.repeat
     
-    handleBad(currentShape,repeat);
+    handleBad(currentShape,repeat)
     
   }
 
@@ -146,7 +157,7 @@ $(document).ready(function () {
           if (
             i !== colors.length - 1 ||
             j !== shapes.length - 1 ||
-            k !== repeats.length - 1
+            k !== repeats.length - 1 
           ) {
             const newObj = {
               color: colors[i],
