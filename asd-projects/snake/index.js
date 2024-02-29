@@ -42,6 +42,7 @@ var activeKey;
 $("body").on("keydown", handleKeyDown);
 
 // start the game
+init();
 function init() {
 
   // TODO 4b-2: initialize the apple
