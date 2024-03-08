@@ -49,7 +49,9 @@ function runProgram(){
   function newFrame() {
 
     repositionwalker();
+    wallCollision();
     redrawwalker();
+    
   }
 
   // this runs the functions created
@@ -75,7 +77,7 @@ function runProgram(){
   }
 
   // when the keys are pressed the walker will move
-
+  // whent he key is up the walker will not continue moving
   function handleKeyUp(event) {
     if (event.which === KEY.LEFT){
       walker.speedX = 0;
@@ -93,7 +95,7 @@ function runProgram(){
   
   }
 
-  // whent he key is up the walker will not continue moving
+
  
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -131,13 +133,13 @@ function runProgram(){
       walker.positionX = 0
     }
     if (walker.positionX >= $("#board").width()-50){
-      walker.positionX = ($("#board").width()-50)
+      walker.positionX = $("#board").width()-50
     }
-    if (walker.positionY >= 0) {
+    if (walker.positionY <= 0) {
       walker.positionY = 0
     }
     if (walker.positionY >= $("#board").height()-50){
-      walker.positionY = ($("#board").height()-50)
+      walker.positionY = $("#board").height()-50
     }
    // this function adds borders so the walker does not go past them
   }
