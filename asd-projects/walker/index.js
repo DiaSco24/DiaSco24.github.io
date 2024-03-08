@@ -50,7 +50,6 @@ function runProgram(){
 
     repositionwalker();
     redrawwalker();
-    wallCollision();
   }
 
   // this runs the functions created
@@ -128,11 +127,17 @@ function runProgram(){
   
 }
   function wallCollision(){
-    if (walker.speedX < 0){
-      walker.speedX = 0
+    if (walker.positionX <= 0){
+      walker.positionX = 0
     }
-    if (walker.speedX > board.width) {
-      walker.speedX = board
+    if (walker.positionX >= $("#board").width()-50){
+      walker.positionX = ($("#board").width()-50)
+    }
+    if (walker.positionY >= 0) {
+      walker.positionY = 0
+    }
+    if (walker.positionY >= $("#board").height()-50){
+      walker.positionY = ($("#board").height()-50)
     }
    // this function adds borders so the walker does not go past them
   }
