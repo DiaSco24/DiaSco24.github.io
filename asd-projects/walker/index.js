@@ -124,7 +124,7 @@ function runProgram() {
     $("#walker").css("top", walker.positionY);
   }
 
-}
+
 // this function adds borders so the walker does not go past them
 function wallCollision() {
   if (walker.positionX < 0) {
@@ -139,4 +139,5 @@ function wallCollision() {
   if (walker.positionY > $("#board").height() - 50) {
     walker.positionY = $("#board").height() - 50;
   }
+}
 }
