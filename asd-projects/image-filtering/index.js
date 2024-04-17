@@ -11,17 +11,20 @@ $(document).ready(function () {
 /////////////////////////////////////////////////////////
 
 // this function resets the image to its original value; do not change this function
+// this resetys and renders the fujnction
 function resetAndRender() {
   reset();
   render($("#display"), image);
 }
 
-// this function applies the filters to the image and is where you should call
+// this function applies the filters to the image and is where you should call in order for the filters to call
 // all of your apply functions
+// this renders the filter
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
   applyFilter(reddify)
-
+  //applyFilterNoBackground(decreaseBlue)
+  //applyFilterNoBackground(increaseGreenByBlue)
   // do not change the below line of code
   render($("#display"), image);
 }
@@ -31,7 +34,7 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-
+// this actually applies the filter its not callijng it but kits making the fujnction that qill be used to call it later
 function applyFilter(filterFunction){
 for ( r = 0; r < image.length; r++) {
   for ( c = 0; c < image[r].length; c++){
@@ -45,6 +48,7 @@ for ( r = 0; r < image.length; r++) {
 }
 
 // TODO 7: Create the applyFilterNoBackground function
+// this applyds the fiter to the object without the background
 function applyFilterNoBackground(filterFunction){
   var backgroundColor = image[0][0];
   for (var i = 0; i < image.length; i++){
@@ -64,23 +68,26 @@ function applyFilterNoBackground(filterFunction){
  
  
  // TODO 5: Create the keepInBounds function
+ //keeps the fiter in bounds
  function keepInBounds(num1){
-  return num1 < 0 || num1 > 255 ? "0" : num1;
+  return num1 < 0 ? 0 : (num1 > 255 ? 255 : num1);
  }
  
  
  // TODO 3: Create reddify function
- function reddify(reds){
-  reds[0] = 200;
+ //this makes thr filter red
+ function reddify(RED){
+  RED[RED] = 200;
  }
  
  
  // TODO 6: Create more filter functions
- function decreaseBlue (Blue){
-  Blue[0] = keepInBounds(BLUE - 50);
- }
- function increaseGreenByBlue (greeny){
-  greeny[0] = keepInBounds(BLUE + GREEN);
+ // This function decreases the blue on the filter
+ function decreaseBlue (BLUE){
+  BLUE[BLUE] = keepInBounds(BLUE - 50);
+ }// this function will increse the green by blue in the function
+ function increaseGreenByBlue (GREEN){
+  GREEN[GREEN] = keepInBounds(BLUE + GREEN);
  }
  // CHALLENGE code goes below here
  
